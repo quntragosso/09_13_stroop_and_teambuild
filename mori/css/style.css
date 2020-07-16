@@ -1,0 +1,196 @@
+@charset "utf-8";
+body{
+    font-size: 16px;
+    font-size: 1rem;
+    font-family: 'Kosugi Maru',
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+    color: #777;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* common settings */
+/*link*/
+a:link, a:visited {
+    color: #333;
+    font-weight: 600;
+}
+a:hover {
+    color: #b4423e;
+    text-decoration: underline;
+    transition: all 0.6s ease;
+}
+/*見出し*/
+h2, h3 {
+    color: #333;
+}
+
+/* header */
+header {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    border: 1px solid #eee;
+    max-width: 1280px;
+}
+header h1 {
+    font-family: "Nico Moji";
+    font-size: 2.6rem;
+    position: absolute;
+    top:1%;
+    left: 2%;
+    z-index: 20;
+}
+
+/*page layout*/
+main {
+    position: relative;
+    max-width: 1280px;
+}
+#main_topics {
+    display: flex;
+    margin-bottom: 5%;
+}
+#main_topics div.l_2columns {
+    flex-basis: 1;
+} 
+
+#main_topics div + div{
+    border-left: 1px solid #ccc;
+}
+#main_topics div.l_2columns {
+    background-color: #666;
+}
+#main_topics div.r_2columns {
+    background-color:red;
+}
+
+
+/*contents*/
+/*main_news*/
+#main_news {
+    position: relative;
+}
+.pickup_card {
+    background: #fff;
+    padding: 3%;
+    /* position: absolute; */
+    /* left: 10px; */
+    bottom: 24px; 
+}
+.news_caps {
+    font-size: 0.75rem;
+}
+.news_date {
+    
+}
+.news_tag {
+    color: #b4423e;
+    padding-left: 3%;
+}
+.comment dl {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    margin-top: 5%;
+}
+.comment dl dt {
+    flex-basis: 20%;
+}
+.comment dl dd {
+    flex-basis: 72%;
+}
+/* news lists*/
+.tab_area {
+    width: 640px;
+    overflow: hidden;
+  /* margin: 0 auto */
+}
+.tab_btn {
+  width: calc(100%/2);
+  height: 50px;
+  border-bottom: 3px solid #b4423e;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 1rem;
+  text-align: center;
+  color: #777;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_btn:hover {
+    background: #fff;
+}
+/*ラジオボタンのスタイルreset*/
+input[name="tab_btn"] {
+    display: none;
+}
+/*タブ表示切替のスタイル*/
+.tab_content {
+  display: none;
+  padding: 5% 6%;
+  clear: both;
+  overflow: hidden;
+  background: #fff;
+}
+/*選択したタブのコンテンツのみ表示*/
+#trend_news:checked ~ #trend_news_block,
+#latest_news:checked ~ #latest_news_block {
+    display: block;
+}
+
+/*選択したタブのスタイル変更*/
+.tab_area input:checked + .tab_btn {
+    background-color: #b4423e;
+    color: #fff;
+}
+h2 {
+    margin-bottom: 2%;
+}
+h2::after {
+    margin-top: 16px;
+    background: #b4423e;
+    content: '';
+    display: block;
+    height: 1px;
+    width: 32px;
+}
+.tab_content ul {
+    margin-top: 6%;
+}
+.tab_content li {
+    padding: 3% 0;
+}
+.tab_content li+li {
+    border-top: 1px solid #eee;
+}
+.tab_content li h3{
+    font-size: 1rem;
+    margin-bottom: 2%;
+}
+
+/*編集部イチオシ*/
+#editors_recommend {
+    margin-bottom: 5%;
+    background: #fff;
+    padding: 3%;
+}
+
+#editors_recommend div.pickup_card{
+    padding-left: 0;
+}
+/*注目カテゴリ*/
+#hot_categories {
+    margin-bottom: 5%;
+    background: #fff;
+    padding: 3%;
+}
